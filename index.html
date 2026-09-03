@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老雷会员直播 · 投资观点库</title>
+<style>
+
+  :root{--bg:#f7f7f5;--card:#fff;--ink:#1f2430;--sub:#6b7280;--accent:#c0392b;--accent2:#8e44ad;--line:#e8e6e1;--chip:#fff3f0;--chipink:#b3402e}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75;font-size:15px}
+  .wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px}
+  header{background:linear-gradient(135deg,#1f2430 0%,#2d3a4d 60%,#8e44ad 130%);color:#fff;border-radius:16px;padding:34px 30px;margin-bottom:22px}
+  header h1{margin:0 0 10px;font-size:25px;letter-spacing:.5px}
+  header p{margin:4px 0;opacity:.88;font-size:13.5px}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:4px 12px;border-radius:999px;font-size:12.5px}
+  .rules{background:#eef5f0;border:1px solid #cfe5d8;border-radius:12px;padding:12px 18px;margin:16px 0 24px;font-size:13px;color:#2c5e45}
+  .rules b{color:#1e6b3d}
+  h2{font-size:20px;margin:36px 0 14px;padding:13px 18px;background:var(--card);border-left:5px solid var(--accent);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.05);scroll-margin-top:14px}
+  h3{font-size:16px;margin:22px 0 8px;color:var(--accent2);padding-left:10px;border-left:3px solid var(--accent2)}
+  .view{display:inline-block;background:var(--chip);color:var(--chipink);font-weight:700;font-size:12.5px;padding:2px 10px;border-radius:6px;margin:14px 0 2px;letter-spacing:.5px}
+  p{margin:6px 0}
+  strong{color:#111}
+  ul{padding-left:22px;margin:6px 0}
+  li{margin:4px 0}
+  blockquote.note{margin:12px 0;padding:10px 16px;background:#fffdf6;border-left:4px solid #d9a441;border-radius:0 8px 8px 0;color:#5a5448;font-size:13.5px}
+  blockquote.note p{margin:0}
+  table{border-collapse:collapse;width:100%;margin:14px 0;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  th{background:#2d3a4d;color:#fff;font-size:13px;padding:9px 12px;text-align:left}
+  td{padding:8px 12px;border-top:1px solid var(--line);font-size:13.5px;vertical-align:top}
+  tr:nth-child(even) td{background:#fafaf8}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .navlink{display:inline-block;text-decoration:none;color:var(--ink);background:#f0efec;border-radius:999px;padding:3px 12px;margin:4px 5px 0 0;font-size:12.5px;border:1px solid var(--line)}
+  .foot{margin-top:40px;padding:16px 20px;background:var(--card);border-radius:12px;font-size:13px;color:var(--sub);box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .top{position:fixed;right:22px;bottom:22px;background:var(--accent2);color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:0 3px 10px rgba(0,0,0,.2);z-index:99}
+  hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+
+  .sec-title{font-size:18px;font-weight:700;margin:30px 0 12px;padding:10px 16px;background:var(--card);border-left:5px solid var(--accent);border-radius:10px}
+  .sum-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+  .sum-card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-top:4px solid var(--accent2)}
+  .sum-tag{display:inline-block;font-size:12px;font-weight:700;color:var(--chipink);background:var(--chip);padding:2px 10px;border-radius:999px;margin-bottom:8px}
+  .sum-title{font-size:15.5px;font-weight:700;margin-bottom:8px;line-height:1.5}
+  .sum-body{font-size:13px;color:#444;line-height:1.7}
+  .st-name{white-space:nowrap;font-weight:700;font-size:14px}
+  .st-name a{color:var(--accent)}
+  .st-name a:hover{color:var(--accent2)}
+  .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+  .topic-card{background:var(--card);border-radius:12px;padding:14px 16px;box-shadow:0 1px 3px rgba(0,0,0,.05);text-decoration:none;color:var(--ink);border:1px solid var(--line);transition:.15s}
+  .topic-card:hover{border-color:var(--accent2);box-shadow:0 4px 12px rgba(142,68,173,.12);transform:translateY(-2px)}
+  .topic-name{font-weight:700;font-size:14.5px;margin-bottom:4px}
+  .topic-desc{font-size:12px;color:var(--sub)}
+  .lay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .lay-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.05);border-top:4px solid #1e8449}
+  .lay-card.steady{border-top-color:#2d3a4d}
+  .lay-card.grow{border-top-color:var(--accent2)}
+  .lay-name{font-weight:700;font-size:15px;margin-bottom:2px}
+  .lay-role{font-size:12px;color:var(--sub);margin-bottom:8px}
+  .lay-body{font-size:13px;color:#444;line-height:1.65}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>老雷会员直播 · 投资观点库</h1>
+  <p>分类时间线 · 每周更新 · 参考 jinjiancheng.com 的主题导航 + 账户持仓模块整理</p>
+  <div class="meta">
+    <span>覆盖 2026年7月2日 — 8月27日 · 共9期</span>
+    <span>9 期直播原文</span>
+    <span>更新于 2026-08-31</span>
+    <span>主题板块 13 个</span>
+  </div>
+</header>
+
+<div class="rules"><b>保留规则</b>：同一标的/股票/事情，信息 <b>超过5条</b> 仅保留 <b>近2个月</b>；不足3条可保留 <b>近3个月</b>。每周新增直播后同步更新 HTML 与 Word。</div>
+
+<div class="sec-title">整体大市 · 观点总结</div>
+<div class="sum-grid">
+    <div class="sum-card">
+      <div class="sum-tag">短期 · Q4（8-27）</div>
+      <div class="sum-title">全面牛市逻辑仍在，但AI分歧极大、波动大</div>
+      <div class="sum-body">全面牛市=科技/金融/消费/能源/医疗五板块均衡上调，不是AI的牛；从科技里一定有钱走出来。短线资金Q4没什么看头，长线资金硬件、软件都非常有看头。罗素必有一波结构性大调整（最迟明年1月）。</div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-tag">宏观 · 货币（8-27）</div>
+      <div class="sum-title">衰退预期消失、转计价通胀；美债扭曲操作启动，美元Q4必走空</div>
+      <div class="sum-body">PCE 3.3/3.7 + GDP 1.5 → 美国衰退预期没了，9月按兵不动概率64%（杰克逊霍尔定调）；美债破40万亿、贝森特第一期扭曲操作160亿，短债长债分化，30年期极值5.5；2029年前AI资本开支不能停，美国不会着陆。</div>
+    </div>
+    <div class="sum-card">
+      <div class="sum-tag">结构 · 周期（8-27）</div>
+      <div class="sum-title">大考在2027年6-7月：设备折旧重估将重构AI；2029前趋势确定性100%</div>
+      <div class="sum-body">2027年6-7月折旧大考、明年3-4月起AI整个重构，挑战者出清、老钱胜出；2029年前AI趋势确定性100%。守住1:1结构（50%债+50%股，进攻科技/金融+防守医疗/能源/消费）是核心。仓位进度：美债/科技/金融/能源/医疗已做完，只剩消费。</div>
+    </div></div>
+
+<div class="sec-title">重点标的 · 一句话速览</div>
+<table>
+  <tr><th style="width:90px">标的</th><th>最新核心观点</th></tr>
+  <tr><td class="st-name"><a href="topics.html#sec-3">英伟达</a></td><td>财报“勉强及格”但长期极确定，毛利率85→74走低是最大风险，远期PE 15倍/PEG 0.2，Robin出货确认20%</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">博通</a></td><td>被google-迈威尔协议误读砸到362，价值没消失，340-350支撑，拿到2029</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">迈威尔</a></td><td>177综合成本现近250，“现在追纯扯了”，理想区间165-180</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">台积电</a></td><td>157成本第一大重仓、绝不减仓，合理价365-380，“永远无上限”</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">阿斯麦</a></td><td>1800偏高、今年80台封顶，一直看好但没做（不喜欢资本市场表现）</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">三星</a></td><td>PE 4-5倍“价格不重要”，169000韩币是底，回购是好事</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">SK海力士</a></td><td>ADR跌50%“还怎么调”，IPO长期好事，现价“不能骑了”随时调价</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">美光</a></td><td>650最好成本已兑现（1200时给的），远期12倍PE便宜</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">ARM</a></td><td>97%利润率、100倍PE注定高波动（60%常态），大跌时做</td></tr><tr><td class="st-name"><a href="topics.html#sec-3">英特尔</a></td><td>80多块中性，30成本“为什么要卖”，拿到特朗普任期结束</td></tr><tr><td class="st-name"><a href="topics.html#sec-4">微软</a></td><td>382成本、看不到1000不走，软件公司排名第一</td></tr><tr><td class="st-name"><a href="topics.html#sec-4">谷歌</a></td><td>短期中性、长期不用计较，token工厂逻辑已定</td></tr><tr><td class="st-name"><a href="topics.html#sec-4">Meta</a></td><td>600以下都是低估、严重超跌，但风险未完全出清（诉讼）</td></tr><tr><td class="st-name"><a href="topics.html#sec-4">亚马逊</a></td><td>196成本、短期不乐观长期很乐观，AWS转型面临重估</td></tr><tr><td class="st-name"><a href="topics.html#sec-4">软银</a></td><td>=OpenAI：10月最后一笔后累计462亿，按NAV还有三五个千亿标的</td></tr><tr><td class="st-name"><a href="topics.html#sec-5">黄金</a></td><td>底4100、目标5400，现价偏中性“现在追逻辑是错的”</td></tr><tr><td class="st-name"><a href="topics.html#sec-6">比特币</a></td><td>底62500、年底12-13万有信心，8万是扎空、83000上暂无动能等清晰法案</td></tr><tr><td class="st-name"><a href="topics.html#sec-7">西方石油</a></td><td>46成本拿三五年，美国本土油吃安全溢价+页岩油大发展</td></tr><tr><td class="st-name"><a href="topics.html#sec-8">伯克希尔</a></td><td>23倍PE卖出原则（五六十年坚守），75不差</td></tr><tr><td class="st-name"><a href="topics.html#sec-9">礼来</a></td><td>学员成本600多全翻倍，1300是阶段高点但“我不走”</td></tr><tr><td class="st-name"><a href="topics.html#sec-9">联合健康</a></td><td>282→443涨超理解、拿着，医疗保健永远牛市</td></tr><tr><td class="st-name"><a href="topics.html#sec-10">沃尔玛</a></td><td>103没问题、最极限92，防御首选（比Costco好）</td></tr><tr><td class="st-name"><a href="topics.html#sec-10">丰田</a></td><td>160是底部、永远坚定看好，防御组合核心</td></tr><tr><td class="st-name"><a href="topics.html#sec-12">SpaceX</a></td><td>80-90成本坚定持有，135是阻力，属“梦想”仓位</td></tr>
+</table>
+
+<div class="sec-title">主题板块导航</div>
+<div class="topic-grid"><a class="topic-card" href="topics.html#sec-1">
+      <div class="topic-name">宏观政策与美联储</div><div class="topic-desc">利率·缩表·美债·美元·日元·人民币资产</div></a><a class="topic-card" href="topics.html#sec-2">
+      <div class="topic-name">美股大盘与指数</div><div class="topic-desc">标普·纳指·罗素·道指</div></a><a class="topic-card" href="topics.html#sec-3">
+      <div class="topic-name">AI硬件与半导体</div><div class="topic-desc">算力·代工·存储·CPU/CPO</div></a><a class="topic-card" href="topics.html#sec-4">
+      <div class="topic-name">AI软件与云巨头</div><div class="topic-desc">微软·谷歌·Meta·亚马逊·软银·SAP</div></a><a class="topic-card" href="topics.html#sec-5">
+      <div class="topic-name">黄金与贵金属</div><div class="topic-desc">黄金·白银·矿业·铜</div></a><a class="topic-card" href="topics.html#sec-6">
+      <div class="topic-name">比特币与加密</div><div class="topic-desc">BTC·微策略·稳定币·加密法案</div></a><a class="topic-card" href="topics.html#sec-7">
+      <div class="topic-name">能源与石油</div><div class="topic-desc">油价·五大油企·页岩油·核能</div></a><a class="topic-card" href="topics.html#sec-8">
+      <div class="topic-name">金融板块</div><div class="topic-desc">六大行·伯克希尔·券商·支付</div></a><a class="topic-card" href="topics.html#sec-9">
+      <div class="topic-name">医疗保健</div><div class="topic-desc">礼来·诺和诺德·联合健康·强生·莫德纳</div></a><a class="topic-card" href="topics.html#sec-10">
+      <div class="topic-name">消费板块</div><div class="topic-desc">沃尔玛·LV·耐克·苹果·丰田·拼多多</div></a><a class="topic-card" href="topics.html#sec-11">
+      <div class="topic-name">房地产</div><div class="topic-desc">美国房地产·家得宝·霍顿</div></a><a class="topic-card" href="topics.html#sec-12">
+      <div class="topic-name">军工与太空</div><div class="topic-desc">军工·SpaceX·洛马·雷神·莱茵金属</div></a><a class="topic-card" href="topics.html#sec-13">
+      <div class="topic-name">持仓结构与方法论</div><div class="topic-desc">防守/稳健/进取 · 1:1 · 631 · 五大赛道</div></a></div>
+
+<div class="sec-title">持仓结构（防守 / 稳健 / 进取）</div>
+<div class="lay-grid">
+  <div class="lay-card">
+    <div class="lay-name">防守型 · 稳定生息</div>
+    <div class="lay-role">资产基石 · 波动率最低</div>
+    <div class="lay-body">美债（两年期+十年期各一半）、黄金（10%）、消费蓝筹（沃尔玛/丰田/五大商事）、伯克希尔、防御组合</div>
+  </div>
+  <div class="lay-card steady">
+    <div class="lay-name">稳健型 · 宽基为锚</div>
+    <div class="lay-role">跟随大盘 · 均衡配置</div>
+    <div class="lay-body">美股（标普/纳指，等广度牛市机会再做）、五大能源油企（雪佛龙/XOM/BP/壳牌/西方石油）</div>
+  </div>
+  <div class="lay-card grow">
+    <div class="lay-name">进取型 · 科技成长</div>
+    <div class="lay-role">弹性来源 · 博取超额</div>
+    <div class="lay-body">AI硬件五大件（GPU/TPU/CPU/CPO/HBM）均配、AI软件五巨头（微软/谷歌/亚马逊/Meta/SAP）、软银、加密BTC（10%）</div>
+  </div>
+</div>
+
+<div class="foot">内容整理自老雷会员直播原文，仅供参考，不构成投资建议 · 每周更新时同步刷新本站与 Word 版</div>
+
+</div>
+</body>
+</html>
